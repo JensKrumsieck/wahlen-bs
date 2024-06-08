@@ -15,11 +15,11 @@ def parse_districts(districts) -> pd.DataFrame:
     for district in districts["features"]:
         district_table.append({districts["id"] + "Id": district["id"], districts["id"]: district["name"]})
     for theme in districts["themes"]:
-        election = theme["name"]
+        election = theme["name"].strip()
         if not (election.endswith("wahl")):
             continue
         for indicator in theme["indicators"]:
-            year = indicator["name"]
+            year = indicator["name"].strip()
             if not len(year) == 4:
                 continue
             measure = indicator["date"]
@@ -31,7 +31,7 @@ def parse_districts(districts) -> pd.DataFrame:
     return df
 
 def read_file(filename: str, electoralDistricts = False) -> pd.DataFrame:
-    with open(config.data_dir + "electionsTo2019.json") as data:
+    with open(filename) as data:
         json_data = json.load(data)
         geographies = json_data["geographies"]
         # geographies:
