@@ -10,7 +10,8 @@ export default function Choropleth(props: { data: DSVRowString<string>[] | null 
     useEffect(() => {
         var measures = props.data?.map(d => d.Messung);
         if (!measures) return;
-        setMeasure(measures[0])
+        var def = measures.find(d => d == "GRÜNE") || "GRÜNE (Zweitstimmen)";
+        setMeasure(def)
     }, [props.data]);
 
     useEffect(() => {
@@ -23,15 +24,16 @@ export default function Choropleth(props: { data: DSVRowString<string>[] | null 
 
     return (
         <>
-            {console.log(new URL(geoPath, import.meta.url).href)}
-            <div style={{display: "block"}}>
-                <p>Kartendarstellung {measure}</p>
-                <select title="Kartendarstellung auswählen" value={String(measure)} onChange={(e) => setMeasure(e.target.value)}>
-                    {[...new Set(props.data?.map(d => d.Messung))]?.map(d => <option key={d} value={d}>{d}</option>)}
-                </select>
+            <div className="block">
+                <div>
+                    <p>Kartendarstellung {measure}</p>
+                    <select title="Kartendarstellung auswählen" value={String(measure)} onChange={(e) => setMeasure(e.target.value)}>
+                        {[...new Set(props.data?.map(d => d.Messung))]?.map(d => <option key={d} value={d}>{d}</option>)}
+                    </select>
+                </div>
                 <Plot
-                    style={{ display: "block", height: '100%', width: '100%' }}
-                    id="choropleth"
+                    className="w-auto h-96"
+                    style={{display: "block"}}
                     data={[
                         {
                             type: 'choropleth',

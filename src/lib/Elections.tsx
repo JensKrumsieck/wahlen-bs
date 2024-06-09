@@ -17,12 +17,13 @@ export default function Elections() {
         d3.csv(dataUrl).then(df => {
             setData(df)
             setValidElections([...new Set(df.map(d => d.Wahl))])
-            setElection(df[0].Wahl)
+            setElection("Landtagswahl")
         })
     }, []);
     useEffect(() => {
-        setValidYears([...new Set(data?.filter(d => d.Wahl == election).map(d => Number(d.Jahr)))])
-        setYear(Number(data?.filter(d => d.Wahl == election)[0].Jahr))
+        var years = [...new Set(data?.filter(d => d.Wahl == election).map(d => Number(d.Jahr)))];
+        setValidYears(years)
+        setYear(Number(years[years.length - 1]))
     }, [election]);
 
     useEffect(() => {
@@ -35,7 +36,7 @@ export default function Elections() {
             {!data
                 ? <p>Lese Daten...</p>
                 : <>
-                    <div>Ergebnisse der {election} {year}</div>
+                    <h2 className='font-bold text-2xl'>Ergebnisse der {election} {year}</h2>
                     {!validElections || !validYears
                         ? <p>Lese Daten...</p>
                         : <>
