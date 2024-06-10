@@ -17,7 +17,7 @@ export default function Choropleth(props: { data: DSVRowString<string>[] | null 
     useEffect(() => {
         if (!props.data) return;
         var usedData = props.data.filter(d => d.Messung == measure);
-        setGeoPath(usedData.length != 12 ? "../../data/geodata_old.json" : "../../data/geodata.json")
+        setGeoPath(usedData.length != 12 ? "geodata_old.json" : "geodata.json")
         setPlotData(usedData)
     }, [props.data, measure]);
 
