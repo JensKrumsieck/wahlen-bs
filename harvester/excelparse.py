@@ -4,8 +4,10 @@ def parse(input: pd.DataFrame) -> pd.DataFrame:
     input.rename(columns={"Wahl zum/zur Oberbürgermeister/in": "Oberbürgermeisterwahl"}, inplace=True)
     input.drop("Demographische Struktur der Bevölkerung", inplace=True, axis=1, level=0)
 
+    input.drop([col for col in input.columns.get_level_values(1).unique() if "Gewi" in str(col)], axis=1, level=1, inplace=True)
     level1cols = input.columns.get_level_values(1).unique()
     level1cols = [col for col in level1cols if len(str(col)) > 4]
+    level1cols = [col for col in level1cols if not "vorläufig" in str(col)]
     input.drop(level1cols[1:], inplace=True, axis=1, level=1)
     level2cols = input.columns.get_level_values(2).unique()
     level2cols = [col for col in level2cols if str(col).startswith("Stimmen") or str(col).startswith("Stärkste")]
@@ -26,7 +28,7 @@ def parse(input: pd.DataFrame) -> pd.DataFrame:
                 measures = row[election][year]
                 for measure in measures.index:
                     value = measures[measure]
-                    series = pd.Series([id, district, election, year, measure, value], index=df.columns)
+                    series = pd.Series([id, district, election, str(year)[:4], measure, value], index=df.columns)
                     df = df._append(series, ignore_index=True)
     return df
 

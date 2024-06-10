@@ -17,7 +17,7 @@ export default function Elections() {
         d3.csv(dataUrl).then(df => {
             setData(df)
             setValidElections([...new Set(df.map(d => d.Wahl))])
-            setElection("Landtagswahl")
+            setElection("Europawahl")
         })
     }, []);
     useEffect(() => {
