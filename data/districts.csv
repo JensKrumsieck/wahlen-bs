@@ -3948,6 +3948,16 @@ StadtbezirkeId,Stadtbezirke,Wahl,Jahr,Messung,Wert
 111,111  Hondelage-Volkmarode,Bundestagswahl,2021,Die PARTEI (Zweitstimmen),0.6709493219129193
 111,111  Hondelage-Volkmarode,Bundestagswahl,2021,Sonstige (Erststimmen),2.526766595289079
 111,111  Hondelage-Volkmarode,Bundestagswahl,2021,Sonstige (Zweitstimmen),4.039971448965026
+111,111  Hondelage-Volkmarode,Europawahl,2019,Wahlberechtigte,8568
+111,111  Hondelage-Volkmarode,Europawahl,2019,Wahlbeteiligung,72.64977227607147
+111,111  Hondelage-Volkmarode,Europawahl,2019,CDU,31.52542372881356
+111,111  Hondelage-Volkmarode,Europawahl,2019,GRÜNE,23.050847457627118
+111,111  Hondelage-Volkmarode,Europawahl,2019,SPD,21.09765940274415
+111,111  Hondelage-Volkmarode,Europawahl,2019,AfD,6.957223567393059
+111,111  Hondelage-Volkmarode,Europawahl,2019,FDP,6.069410815173527
+111,111  Hondelage-Volkmarode,Europawahl,2019,DIE LINKE,2.792574656981437
+111,111  Hondelage-Volkmarode,Europawahl,2019,Volt,0.5649717514124294
+111,111  Hondelage-Volkmarode,Europawahl,2019,Sonstige,7.941888619854722
 112,112  Wabe-Schunter-Beberbach,Oberbürgermeisterwahl,2014,Wahlberechtigte,16523
 112,112  Wabe-Schunter-Beberbach,Oberbürgermeisterwahl,2014,Wahlbeteiligung,56.636204079162376
 112,112  Wabe-Schunter-Beberbach,Oberbürgermeisterwahl,2014,SPD,42.29032258064516
@@ -4078,6 +4088,16 @@ StadtbezirkeId,Stadtbezirke,Wahl,Jahr,Messung,Wert
 112,112  Wabe-Schunter-Beberbach,Bundestagswahl,2021,Die PARTEI (Zweitstimmen),0.933365798230663
 112,112  Wabe-Schunter-Beberbach,Bundestagswahl,2021,Sonstige (Erststimmen),3.153808830664726
 112,112  Wabe-Schunter-Beberbach,Bundestagswahl,2021,Sonstige (Zweitstimmen),4.950896842788735
+112,112  Wabe-Schunter-Beberbach,Europawahl,2019,Wahlberechtigte,15747
+112,112  Wabe-Schunter-Beberbach,Europawahl,2019,Wahlbeteiligung,65.68983562149849
+112,112  Wabe-Schunter-Beberbach,Europawahl,2019,CDU,27.51387451791929
+112,112  Wabe-Schunter-Beberbach,Europawahl,2019,GRÜNE,26.657887310695138
+112,112  Wabe-Schunter-Beberbach,Europawahl,2019,SPD,20.01693161508795
+112,112  Wabe-Schunter-Beberbach,Europawahl,2019,AfD,6.39638792211457
+112,112  Wabe-Schunter-Beberbach,Europawahl,2019,FDP,5.361678111184273
+112,112  Wabe-Schunter-Beberbach,Europawahl,2019,DIE LINKE,3.3486972062835103
+112,112  Wabe-Schunter-Beberbach,Europawahl,2019,Volt,0.761922678957765
+112,112  Wabe-Schunter-Beberbach,Europawahl,2019,Sonstige,9.942620637757502
 120,120  Östliches Ringgebiet,Oberbürgermeisterwahl,2014,Wahlberechtigte,22147
 120,120  Östliches Ringgebiet,Oberbürgermeisterwahl,2014,Wahlbeteiligung,58.94703571589831
 120,120  Östliches Ringgebiet,Oberbürgermeisterwahl,2014,SPD,49.3788100933714
@@ -4208,6 +4228,16 @@ StadtbezirkeId,Stadtbezirke,Wahl,Jahr,Messung,Wert
 120,120  Östliches Ringgebiet,Bundestagswahl,2021,Die PARTEI (Zweitstimmen),1.2916929789310523
 120,120  Östliches Ringgebiet,Bundestagswahl,2021,Sonstige (Erststimmen),2.884505103796307
 120,120  Östliches Ringgebiet,Bundestagswahl,2021,Sonstige (Zweitstimmen),4.764911877834548
+120,120  Östliches Ringgebiet,Europawahl,2019,Wahlberechtigte,21103
+120,120  Östliches Ringgebiet,Europawahl,2019,Wahlbeteiligung,75.30083813269654
+120,120  Östliches Ringgebiet,Europawahl,2019,CDU,16.28950813540303
+120,120  Östliches Ringgebiet,Europawahl,2019,GRÜNE,39.610996820647095
+120,120  Östliches Ringgebiet,Europawahl,2019,SPD,17.025123121999876
+120,120  Östliches Ringgebiet,Europawahl,2019,AfD,3.50352222430023
+120,120  Östliches Ringgebiet,Europawahl,2019,FDP,4.5633065270245
+120,120  Östliches Ringgebiet,Europawahl,2019,DIE LINKE,5.523346424786485
+120,120  Östliches Ringgebiet,Europawahl,2019,Volt,1.98865407393554
+120,120  Östliches Ringgebiet,Europawahl,2019,Sonstige,11.495542671903248
 130,130  Mitte,Oberbürgermeisterwahl,2014,Wahlberechtigte,21809
 130,130  Mitte,Oberbürgermeisterwahl,2014,Wahlbeteiligung,46.11857490027053
 130,130  Mitte,Oberbürgermeisterwahl,2014,SPD,44.004004004004
@@ -4338,6 +4368,16 @@ StadtbezirkeId,Stadtbezirke,Wahl,Jahr,Messung,Wert
 130,130  Mitte,Bundestagswahl,2021,Die PARTEI (Zweitstimmen),1.6077616077616077
 130,130  Mitte,Bundestagswahl,2021,Sonstige (Erststimmen),3.507555802024123
 130,130  Mitte,Bundestagswahl,2021,Sonstige (Zweitstimmen),5.93901593901594
+130,130  Mitte,Europawahl,2019,Wahlberechtigte,20368
+130,130  Mitte,Europawahl,2019,Wahlbeteiligung,66.06103547750392
+130,130  Mitte,Europawahl,2019,CDU,18.962336664104534
+130,130  Mitte,Europawahl,2019,GRÜNE,31.56033820138355
+130,130  Mitte,Europawahl,2019,SPD,16.579554189085318
+130,130  Mitte,Europawahl,2019,AfD,5.611068408916219
+130,130  Mitte,Europawahl,2019,FDP,6.356648731744811
+130,130  Mitte,Europawahl,2019,DIE LINKE,5.941583397386626
+130,130  Mitte,Europawahl,2019,Volt,2.1368178324365874
+130,130  Mitte,Europawahl,2019,Sonstige,12.851652574942351
 211,211  Braunschweig-Süd,Oberbürgermeisterwahl,2014,Wahlberechtigte,16559
 211,211  Braunschweig-Süd,Oberbürgermeisterwahl,2014,Wahlbeteiligung,52.62395072166194
 211,211  Braunschweig-Süd,Oberbürgermeisterwahl,2014,SPD,48.75937680323139
@@ -4468,6 +4508,16 @@ StadtbezirkeId,Stadtbezirke,Wahl,Jahr,Messung,Wert
 211,211  Braunschweig-Süd,Bundestagswahl,2021,Die PARTEI (Zweitstimmen),0.9516526467839239
 211,211  Braunschweig-Süd,Bundestagswahl,2021,Sonstige (Erststimmen),2.769778078942911
 211,211  Braunschweig-Süd,Bundestagswahl,2021,Sonstige (Zweitstimmen),4.724275639391622
+211,211  Braunschweig-Süd,Europawahl,2019,Wahlberechtigte,15731
+211,211  Braunschweig-Süd,Europawahl,2019,Wahlbeteiligung,64.27939876215738
+211,211  Braunschweig-Süd,Europawahl,2019,CDU,27.538522323192417
+211,211  Braunschweig-Süd,Europawahl,2019,GRÜNE,22.54049782694587
+211,211  Braunschweig-Süd,Europawahl,2019,SPD,23.69616752271829
+211,211  Braunschweig-Süd,Europawahl,2019,AfD,8.257605689450811
+211,211  Braunschweig-Süd,Europawahl,2019,FDP,5.007902015013829
+211,211  Braunschweig-Süd,Europawahl,2019,DIE LINKE,3.5163966811536937
+211,211  Braunschweig-Süd,Europawahl,2019,Volt,0.6222836823389964
+211,211  Braunschweig-Süd,Europawahl,2019,Sonstige,8.820624259186092
 212,212  Südstadt-Rautheim-Mascherode,Oberbürgermeisterwahl,2014,Wahlberechtigte,10806
 212,212  Südstadt-Rautheim-Mascherode,Oberbürgermeisterwahl,2014,Wahlbeteiligung,54.79363316675921
 212,212  Südstadt-Rautheim-Mascherode,Oberbürgermeisterwahl,2014,SPD,48.87602179836512
@@ -4598,6 +4648,16 @@ StadtbezirkeId,Stadtbezirke,Wahl,Jahr,Messung,Wert
 212,212  Südstadt-Rautheim-Mascherode,Bundestagswahl,2021,Die PARTEI (Zweitstimmen),0.9552238805970149
 212,212  Südstadt-Rautheim-Mascherode,Bundestagswahl,2021,Sonstige (Erststimmen),2.9984470194719868
 212,212  Südstadt-Rautheim-Mascherode,Bundestagswahl,2021,Sonstige (Zweitstimmen),4.859701492537314
+212,212  Südstadt-Rautheim-Mascherode,Europawahl,2019,Wahlberechtigte,10280
+212,212  Südstadt-Rautheim-Mascherode,Europawahl,2019,Wahlbeteiligung,65.3156450137237
+212,212  Südstadt-Rautheim-Mascherode,Europawahl,2019,CDU,26.122448979591837
+212,212  Südstadt-Rautheim-Mascherode,Europawahl,2019,GRÜNE,25.39057002111189
+212,212  Südstadt-Rautheim-Mascherode,Europawahl,2019,SPD,21.26671358198452
+212,212  Südstadt-Rautheim-Mascherode,Europawahl,2019,AfD,7.698803659394793
+212,212  Südstadt-Rautheim-Mascherode,Europawahl,2019,FDP,5.376495425756509
+212,212  Südstadt-Rautheim-Mascherode,Europawahl,2019,DIE LINKE,3.3356790992258976
+212,212  Südstadt-Rautheim-Mascherode,Europawahl,2019,Volt,0.6052076002814919
+212,212  Südstadt-Rautheim-Mascherode,Europawahl,2019,Sonstige,10.204081632653061
 221,221  Weststadt,Oberbürgermeisterwahl,2014,Wahlberechtigte,18264
 221,221  Weststadt,Oberbürgermeisterwahl,2014,Wahlbeteiligung,32.18900569426194
 221,221  Weststadt,Oberbürgermeisterwahl,2014,SPD,49.14295509084676
@@ -4728,6 +4788,16 @@ StadtbezirkeId,Stadtbezirke,Wahl,Jahr,Messung,Wert
 221,221  Weststadt,Bundestagswahl,2021,Die PARTEI (Zweitstimmen),0.7925568573397657
 221,221  Weststadt,Bundestagswahl,2021,Sonstige (Erststimmen),2.815456514305255
 221,221  Weststadt,Bundestagswahl,2021,Sonstige (Zweitstimmen),5.559384332644153
+221,221  Weststadt,Europawahl,2019,Wahlberechtigte,16092
+221,221  Weststadt,Europawahl,2019,Wahlbeteiligung,44.26378182289305
+221,221  Weststadt,Europawahl,2019,CDU,26.446280991735538
+221,221  Weststadt,Europawahl,2019,GRÜNE,15.289256198347106
+221,221  Weststadt,Europawahl,2019,SPD,27.036599763872495
+221,221  Weststadt,Europawahl,2019,AfD,12.57378984651712
+221,221  Weststadt,Europawahl,2019,FDP,3.7485242030696577
+221,221  Weststadt,Europawahl,2019,DIE LINKE,4.766824085005903
+221,221  Weststadt,Europawahl,2019,Volt,0.6641086186540732
+221,221  Weststadt,Europawahl,2019,Sonstige,9.47461629279811
 222,222  Südwest,Oberbürgermeisterwahl,2014,Wahlberechtigte,10434
 222,222  Südwest,Oberbürgermeisterwahl,2014,Wahlbeteiligung,48.294038719570636
 222,222  Südwest,Oberbürgermeisterwahl,2014,SPD,48.60055977608956
@@ -4858,6 +4928,16 @@ StadtbezirkeId,Stadtbezirke,Wahl,Jahr,Messung,Wert
 222,222  Südwest,Bundestagswahl,2021,Die PARTEI (Zweitstimmen),0.8404558404558405
 222,222  Südwest,Bundestagswahl,2021,Sonstige (Erststimmen),2.657004830917875
 222,222  Südwest,Bundestagswahl,2021,Sonstige (Zweitstimmen),4.857549857549858
+222,222  Südwest,Europawahl,2019,Wahlberechtigte,9665
+222,222  Südwest,Europawahl,2019,Wahlbeteiligung,62.839097121557266
+222,222  Südwest,Europawahl,2019,CDU,27.234961781322696
+222,222  Südwest,Europawahl,2019,GRÜNE,20.854104353605848
+222,222  Südwest,Europawahl,2019,SPD,22.81488866733134
+222,222  Südwest,Europawahl,2019,AfD,9.853772017281488
+222,222  Südwest,Europawahl,2019,FDP,5.001661681621801
+222,222  Südwest,Europawahl,2019,DIE LINKE,4.120970422067132
+222,222  Südwest,Europawahl,2019,Volt,0.6148222000664673
+222,222  Südwest,Europawahl,2019,Sonstige,9.504818876703224
 310,310  Westliches Ringgebiet,Oberbürgermeisterwahl,2014,Wahlberechtigte,27641
 310,310  Westliches Ringgebiet,Oberbürgermeisterwahl,2014,Wahlbeteiligung,43.29076372056004
 310,310  Westliches Ringgebiet,Oberbürgermeisterwahl,2014,SPD,45.29302795554059
@@ -4988,6 +5068,16 @@ StadtbezirkeId,Stadtbezirke,Wahl,Jahr,Messung,Wert
 310,310  Westliches Ringgebiet,Bundestagswahl,2021,Die PARTEI (Zweitstimmen),1.8163242138721762
 310,310  Westliches Ringgebiet,Bundestagswahl,2021,Sonstige (Erststimmen),3.5576486609169304
 310,310  Westliches Ringgebiet,Bundestagswahl,2021,Sonstige (Zweitstimmen),6.442274946077875
+310,310  Westliches Ringgebiet,Europawahl,2019,Wahlberechtigte,26225
+310,310  Westliches Ringgebiet,Europawahl,2019,Wahlbeteiligung,62.17043314500942
+310,310  Westliches Ringgebiet,Europawahl,2019,CDU,15.981474432178658
+310,310  Westliches Ringgebiet,Europawahl,2019,GRÜNE,31.633041492196423
+310,310  Westliches Ringgebiet,Europawahl,2019,SPD,17.231315822865117
+310,310  Westliches Ringgebiet,Europawahl,2019,AfD,5.99543205177008
+310,310  Westliches Ringgebiet,Europawahl,2019,FDP,4.834411876665397
+310,310  Westliches Ringgebiet,Europawahl,2019,DIE LINKE,6.83923359979698
+310,310  Westliches Ringgebiet,Europawahl,2019,Volt,2.0555767034640273
+310,310  Westliches Ringgebiet,Europawahl,2019,Sonstige,15.429514021063317
 321,321  Lehndorf-Watenbüttel,Oberbürgermeisterwahl,2014,Wahlberechtigte,17285
 321,321  Lehndorf-Watenbüttel,Oberbürgermeisterwahl,2014,Wahlbeteiligung,55.99652878218107
 321,321  Lehndorf-Watenbüttel,Oberbürgermeisterwahl,2014,SPD,45.95886141699564
@@ -5118,6 +5208,16 @@ StadtbezirkeId,Stadtbezirke,Wahl,Jahr,Messung,Wert
 321,321  Lehndorf-Watenbüttel,Bundestagswahl,2021,Die PARTEI (Zweitstimmen),0.7026118833053306
 321,321  Lehndorf-Watenbüttel,Bundestagswahl,2021,Sonstige (Erststimmen),2.820766943660898
 321,321  Lehndorf-Watenbüttel,Bundestagswahl,2021,Sonstige (Zweitstimmen),4.505880555979838
+321,321  Lehndorf-Watenbüttel,Europawahl,2019,Wahlberechtigte,16695
+321,321  Lehndorf-Watenbüttel,Europawahl,2019,Wahlbeteiligung,66.92465552623864
+321,321  Lehndorf-Watenbüttel,Europawahl,2019,CDU,27.170276457122732
+321,321  Lehndorf-Watenbüttel,Europawahl,2019,GRÜNE,26.492340200739566
+321,321  Lehndorf-Watenbüttel,Europawahl,2019,SPD,20.55819686564536
+321,321  Lehndorf-Watenbüttel,Europawahl,2019,AfD,6.8233843986617355
+321,321  Lehndorf-Watenbüttel,Europawahl,2019,FDP,5.722838527909843
+321,321  Lehndorf-Watenbüttel,Europawahl,2019,DIE LINKE,3.6626166578622996
+321,321  Lehndorf-Watenbüttel,Europawahl,2019,Volt,0.6339144215530903
+321,321  Lehndorf-Watenbüttel,Europawahl,2019,Sonstige,8.93643247050537
 322,322  Nördliche Schunter-/Okeraue,Oberbürgermeisterwahl,2014,Wahlberechtigte,10288
 322,322  Nördliche Schunter-/Okeraue,Oberbürgermeisterwahl,2014,Wahlbeteiligung,48.30870917573872
 322,322  Nördliche Schunter-/Okeraue,Oberbürgermeisterwahl,2014,SPD,44.91783323189288
@@ -5248,6 +5348,16 @@ StadtbezirkeId,Stadtbezirke,Wahl,Jahr,Messung,Wert
 322,322  Nördliche Schunter-/Okeraue,Bundestagswahl,2021,Die PARTEI (Zweitstimmen),0.9016745384285102
 322,322  Nördliche Schunter-/Okeraue,Bundestagswahl,2021,Sonstige (Erststimmen),2.806267806267807
 322,322  Nördliche Schunter-/Okeraue,Bundestagswahl,2021,Sonstige (Zweitstimmen),4.8661800486618
+322,322  Nördliche Schunter-/Okeraue,Europawahl,2019,Wahlberechtigte,9525
+322,322  Nördliche Schunter-/Okeraue,Europawahl,2019,Wahlbeteiligung,63.21188161128326
+322,322  Nördliche Schunter-/Okeraue,Europawahl,2019,CDU,27.314421606930523
+322,322  Nördliche Schunter-/Okeraue,Europawahl,2019,GRÜNE,20.910480720231018
+322,322  Nördliche Schunter-/Okeraue,Europawahl,2019,SPD,22.11652794292509
+322,322  Nördliche Schunter-/Okeraue,Europawahl,2019,AfD,8.833021912688976
+322,322  Nördliche Schunter-/Okeraue,Europawahl,2019,FDP,5.7244776626465095
+322,322  Nördliche Schunter-/Okeraue,Europawahl,2019,DIE LINKE,3.278410056055716
+322,322  Nördliche Schunter-/Okeraue,Europawahl,2019,Volt,0.7643961270596229
+322,322  Nördliche Schunter-/Okeraue,Europawahl,2019,Sonstige,11.058263971462544
 330,330  Nordstadt-Schunteraue,Oberbürgermeisterwahl,2014,Wahlberechtigte,21792
 330,330  Nordstadt-Schunteraue,Oberbürgermeisterwahl,2014,Wahlbeteiligung,47.53579295154185
 330,330  Nordstadt-Schunteraue,Oberbürgermeisterwahl,2014,SPD,45.292397660818715
@@ -5378,3 +5488,13 @@ StadtbezirkeId,Stadtbezirke,Wahl,Jahr,Messung,Wert
 330,330  Nordstadt-Schunteraue,Bundestagswahl,2021,Die PARTEI (Zweitstimmen),1.6357388316151202
 330,330  Nordstadt-Schunteraue,Bundestagswahl,2021,Sonstige (Erststimmen),3.356441759901161
 330,330  Nordstadt-Schunteraue,Bundestagswahl,2021,Sonstige (Zweitstimmen),5.93127147766323
+330,330  Nordstadt-Schunteraue,Europawahl,2019,Wahlberechtigte,20414
+330,330  Nordstadt-Schunteraue,Europawahl,2019,Wahlbeteiligung,62.27574102964118
+330,330  Nordstadt-Schunteraue,Europawahl,2019,CDU,17.530475815965396
+330,330  Nordstadt-Schunteraue,Europawahl,2019,GRÜNE,29.767990562327963
+330,330  Nordstadt-Schunteraue,Europawahl,2019,SPD,19.016909162406606
+330,330  Nordstadt-Schunteraue,Europawahl,2019,AfD,6.747935509241055
+330,330  Nordstadt-Schunteraue,Europawahl,2019,FDP,4.585135666535588
+330,330  Nordstadt-Schunteraue,Europawahl,2019,DIE LINKE,5.701926858041683
+330,330  Nordstadt-Schunteraue,Europawahl,2019,Volt,2.12347620920173
+330,330  Nordstadt-Schunteraue,Europawahl,2019,Sonstige,14.526150216279984
