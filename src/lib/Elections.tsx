@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import * as d3 from 'd3';
 import Choropleth from './Choropleth';
+import City from './City';
 
 export default function Elections() {
     const [data, setData] = useState<d3.DSVRowArray | null>(null)
@@ -48,6 +49,7 @@ export default function Elections() {
                                 {validYears.map(d => <option key={String(d)} value={String(d)}>{String(d)}</option>)}
                             </select>
                             <Choropleth data={currentData} />
+                            <City data={currentData} />
                         </>
                     }
                 </>
