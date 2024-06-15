@@ -1,0 +1,61 @@
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://admin:password@localhost:5432/elections?schema=public"
+}
+
+generator client {
+  provider = "prisma-client-py"
+}
+
+model Election {
+  election_id   Int          @id @default(autoincrement())
+  election_name String
+  election_date DateTime
+  election_type ElectionType
+  districts     District[]
+  votes         Vote[]
+}
+
+model District {
+  district_id       Int       @id @default(autoincrement())
+  district_name     String
+  city              String?
+  state             String?
+  registered_voters Int
+  voters_voted      Int
+  votes             Vote[]
+  Election          Election? @relation(fields: [election_id], references: [election_id])
+  election_id       Int?
+}
+
+model Party {
+  party_id   Int    @id @default(autoincrement())
+  party_name String
+  votes      Vote[]
+}
+
+model Vote {
+  vote_id     Int      @id @default(autoincrement())
+  district_id Int
+  party_id    Int
+  election_id Int
+  vote_type   VoteType
+  vote_count  Int
+
+  election Election @relation(fields: [election_id], references: [election_id])
+  district District @relation(fields: [district_id], references: [district_id])
+  party    Party    @relation(fields: [party_id], references: [party_id])
+}
+
+enum ElectionType {
+  bundestagswahl
+  landtagswahl
+  europawahl
+  ratswahl
+  buergermeisterwahl
+}
+
+enum VoteType {
+  primary_vote
+  secondary_vote
+}
