@@ -12,6 +12,8 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: 3.12
+    - name: create env
+      run: 'POSTGRES_PRISMA_URL="${{ secrets.POSTGRES_PRISMA_URL}}"' > .env
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
