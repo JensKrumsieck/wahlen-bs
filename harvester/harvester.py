@@ -5,7 +5,7 @@ from urllib.request import urlopen
 from datetime import datetime
 from urllib.parse import urljoin
 from database import Database
-from utils import list2dict, removeSpecialKeys, unfoldVotes, uniqueBy, urlExists, fixElectionName, getElectionType
+from utils import fixPartyName, list2dict, removeSpecialKeys, unfoldVotes, uniqueBy, urlExists, fixElectionName, getElectionType
 from util_types import District, Election, Endpoint, ElectionDate
 
 default_endpoint: Endpoint = Endpoint({
@@ -47,12 +47,15 @@ class Harvester:
                 df = self.__read_csv(csv, date)
                 if df is None or np.isnan(df["A1"][0]):
                     continue
+                
                 election = await self.db.insertElection(Election(datetime.strptime(date.date, "%d.%m.%Y"), name, getElectionType(name)))
-                for _, row in df.iterrows():                    
+                result = self.__prepare_cols(df, data, i)   
+                specialIndices = [i for i, col in enumerate(df.columns) if col.startswith("D1")]              
+                
+                await self.__getParties(result, specialIndices[0])
+                for i, row in df.iterrows():                    
                     district = await self.db.insertDistrict(District(row["gebiet-name"].replace("SBZ", "").strip(), self.endpoint.name, self.endpoint.state, row["A"], row["B"], election.election_id))
-                    print(district)
-                result = self.__prepare_cols(df, data, i)
-
+                
     def __read_csv(self, csv: dict, date: ElectionDate) -> pd.DataFrame | None:
         url = urljoin(date.url, csv["url"])
         if not urlExists(url):
@@ -72,6 +75,16 @@ class Harvester:
             parties = newDict
         selector = list(fields.keys()) + list(parties.keys())
         newDf = df.loc[:, selector]
-        newDf.rename(columns=fields, inplace=True)
         newDf.rename(columns=parties, inplace=True)
         return newDf
+    
+    async def __getParties(self, df: pd.DataFrame, start: int):
+        take = False
+        for i, col in enumerate(df.columns):
+            if col == "datum":
+                take = False
+            if take:
+                partyName = fixPartyName(col)
+                await self.db.insertParty(partyName)
+            if i >= start:
+                take = True

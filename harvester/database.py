@@ -33,3 +33,11 @@ class Database:
                 "election_id": district.election_id
             })
         return dbo
+    
+    async def insertParty(self, partyName: str):
+        dbo = await self.prisma.party.find_first(where={"party_name": partyName})
+        if not dbo:
+            dbo = await self.prisma.party.create({
+                "party_name": partyName
+            })
+        return dbo
