@@ -22,4 +22,4 @@ jobs:
         prisma generate
         prisma migrate deploy
     - name: update db
-      run: python harvester
+      run: python -u harvester
