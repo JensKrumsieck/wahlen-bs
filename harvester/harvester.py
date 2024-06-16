@@ -26,6 +26,7 @@ class Harvester:
     db: Database = Database()
 
     def __readData(self):
+        print("Reading data for " + self.endpoint.name + "!")
         url = self.endpoint.baseUrl + self.endpoint.id + "/api/termine.json"
         with urlopen(url) as response:
             dates = uniqueBy(json.loads(response.read().decode("UTF-8"))["termine"], "url")
@@ -36,6 +37,7 @@ class Harvester:
             if not urlExists(date.url):
                 date.url = base + "api/praesentation/open_data.json"
         self.dates = [date for date in self.dates if urlExists(date.url)]
+        print("Found " + str(len(self.dates)) + " possible elections"  + " in " + self.endpoint.name +"!")
 
     async def harvest(self):
         for date in self.dates:
@@ -44,8 +46,10 @@ class Harvester:
             csvs = [file for file in data["csvs"] if default_layer in file["ebene"]]
             for i, csv in enumerate(csvs):                
                 name = fixElectionName(csv["wahl"])
+                print("Harvesting data for " + name + " at " + date.date + " in " + self.endpoint.name +"!")
                 df = self.__read_csv(csv, date)
                 if df is None or np.isnan(df["A1"][0]):
+                    print("There is no data for " + name + " at " + date.date + " in " + self.endpoint.name +"!")
                     continue
                 
                 election = await self.db.insertElection(Election(datetime.strptime(date.date, "%d.%m.%Y"), name, getElectionType(name)))
