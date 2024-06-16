@@ -1,6 +1,6 @@
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://admin:password@localhost:5432/elections?schema=public"
+  url      = env("POSTGRES_PRISMA_URL")
 }
 
 generator client {
