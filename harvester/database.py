@@ -1,6 +1,7 @@
+import numpy as np
 from prisma import Prisma
 
-from util_types import District, Election
+from util_types import District, Election, Vote
 
 class Database:
     def __init__(self):
@@ -33,11 +34,28 @@ class Database:
                 "election_id": district.election_id
             })
         return dbo
-    
+    async def getParty(self, partyName: str):
+        return await self.prisma.party.find_first(where={"party_name": partyName})
+
     async def insertParty(self, partyName: str):
-        dbo = await self.prisma.party.find_first(where={"party_name": partyName})
+        dbo = await self.getParty(partyName)
         if not dbo:
             dbo = await self.prisma.party.create({
                 "party_name": partyName
+            })
+        return dbo
+    
+    async def insertVote(self, vote: Vote):
+        if np.isnan(vote.vote_count):
+            vote.vote_count = 0
+            
+        dbo = await self.prisma.vote.find_first(where={"party_id": vote.party_id, "district_id": vote.district_id, "election_id": vote.election_id, "vote_type": vote.vote_type})
+        if not dbo:
+            dbo = await self.prisma.vote.create({
+                "party_id": vote.party_id,
+                "district_id": vote.district_id,
+                "election_id": vote.election_id,
+                "vote_count": int(vote.vote_count),
+                "vote_type": vote.vote_type
             })
         return dbo

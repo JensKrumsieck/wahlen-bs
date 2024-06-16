@@ -6,7 +6,7 @@ from datetime import datetime
 from urllib.parse import urljoin
 from database import Database
 from utils import fixPartyName, list2dict, removeSpecialKeys, unfoldVotes, uniqueBy, urlExists, fixElectionName, getElectionType
-from util_types import District, Election, Endpoint, ElectionDate
+from util_types import District, Election, Endpoint, ElectionDate, Vote
 
 default_endpoint: Endpoint = Endpoint({
     "id": "03101000",
@@ -53,9 +53,16 @@ class Harvester:
                 specialIndices = [i for i, col in enumerate(df.columns) if col.startswith("D1")]              
                 
                 await self.__getParties(result, specialIndices[0])
-                for i, row in df.iterrows():                    
+                for i, row in result.iterrows():                    
                     district = await self.db.insertDistrict(District(row["gebiet-name"].replace("SBZ", "").strip(), self.endpoint.name, self.endpoint.state, row["A"], row["B"], election.election_id))
-                
+                    for col in result.columns:
+                        vote_type = "primary_vote" if "Erststimme" in col else "secondary_vote"
+                        party = await self.db.getParty(fixPartyName(col))
+                        if not party:
+                            continue
+                        vote = Vote(district.district_id, election.election_id, party.party_id, row[col], vote_type)
+                        await self.db.insertVote(vote)
+
     def __read_csv(self, csv: dict, date: ElectionDate) -> pd.DataFrame | None:
         url = urljoin(date.url, csv["url"])
         if not urlExists(url):

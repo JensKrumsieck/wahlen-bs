@@ -43,3 +43,14 @@ class District:
 
     def __repr__(self) -> str:
         return f"{self.district_name} ({self.city})"
+    
+class Vote:
+    def __init__(self, district_id, election_id, party_id, vote_count, vote_type) -> None:
+        self.district_id = district_id
+        self.election_id = election_id
+        self.party_id = party_id
+        self.vote_count = vote_count
+        self.vote_type = vote_type
+
+    def __repr__(self) -> str:
+        return f"Votes ({self.vote_type}) for {self.party_id} in {self.district_id} and election {self.election_id}: ({self.vote_count})"
