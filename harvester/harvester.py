@@ -1,11 +1,12 @@
 import json
+import numpy as np
 import pandas as pd
 from urllib.request import urlopen
 from datetime import datetime
 from urllib.parse import urljoin
 from database import Database
-from utils import uniqueBy, urlExists, fixElectionName, getElectionType
-from util_types import Election, Endpoint, ElectionDate
+from utils import list2dict, removeSpecialKeys, unfoldVotes, uniqueBy, urlExists, fixElectionName, getElectionType
+from util_types import District, Election, Endpoint, ElectionDate
 
 default_endpoint: Endpoint = Endpoint({
     "id": "03101000",
@@ -41,12 +42,16 @@ class Harvester:
             with urlopen(date.url) as response:
                 data = json.loads(response.read().decode("UTF-8"))
             csvs = [file for file in data["csvs"] if default_layer in file["ebene"]]
-            for csv in csvs:                
+            for i, csv in enumerate(csvs):                
                 name = fixElectionName(csv["wahl"])
                 df = self.__read_csv(csv, date)
-                if df is None:
+                if df is None or np.isnan(df["A1"][0]):
                     continue
                 election = await self.db.insertElection(Election(datetime.strptime(date.date, "%d.%m.%Y"), name, getElectionType(name)))
+                for _, row in df.iterrows():                    
+                    district = await self.db.insertDistrict(District(row["gebiet-name"].replace("SBZ", "").strip(), self.endpoint.name, self.endpoint.state, row["A"], row["B"], election.election_id))
+                    print(district)
+                result = self.__prepare_cols(df, data, i)
 
     def __read_csv(self, csv: dict, date: ElectionDate) -> pd.DataFrame | None:
         url = urljoin(date.url, csv["url"])
@@ -54,6 +59,19 @@ class Harvester:
            url = urljoin(date.url.replace("api", ""), csv["url"])
         if not urlExists(url):
             return None
-        return pd.read_csv(url, delimiter=";")
+        return pd.read_csv(url, delimiter=";") 
+
+    def __prepare_cols(self, df: pd.DataFrame, data: dict, i: int) -> pd.DataFrame:      
+        fields = removeSpecialKeys(list2dict(data["dateifelder"][i]["felder"]))
+        parties = unfoldVotes(list2dict(data["dateifelder"][i]["parteien"]))
         
-        
+        if "D1_liste" in df.columns:
+            newDict = {}
+            for key in parties:
+                newDict[key + "_summe_liste_kandidaten"] = parties[key]
+            parties = newDict
+        selector = list(fields.keys()) + list(parties.keys())
+        newDf = df.loc[:, selector]
+        newDf.rename(columns=fields, inplace=True)
+        newDf.rename(columns=parties, inplace=True)
+        return newDf

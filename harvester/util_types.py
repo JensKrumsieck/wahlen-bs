@@ -24,8 +24,6 @@ class ElectionDate:
         return f"{self.date} ({self.name})"
     
 class Election:
-    def __init__(self):
-        pass
     def __init__(self, election_date: str, election_name: str, election_type: str):
         self.election_date = election_date
         self.election_name = election_name
@@ -33,3 +31,15 @@ class Election:
 
     def __repr__(self) -> str:
         return f"{self.election_name} ({self.election_date, self.election_type})"
+    
+class District:
+    def __init__(self, district_name, city, state, registered_voters, voters_voted, election_id):
+        self.district_name = district_name
+        self.city = city
+        self.state = state
+        self.registered_voters = registered_voters
+        self.voters_voted = voters_voted
+        self.election_id = election_id
+
+    def __repr__(self) -> str:
+        return f"{self.district_name} ({self.city})"
