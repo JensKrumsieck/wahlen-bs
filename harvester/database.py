@@ -1,6 +1,7 @@
+from datetime import datetime
 import numpy as np
 from prisma import Prisma
-
+from pytz import utc
 from util_types import District, Election, Vote
 
 class Database:
@@ -59,3 +60,26 @@ class Database:
                 "vote_type": vote.vote_type
             })
         return dbo
+    
+    async def getVersion(self, city: str):
+        return await self.prisma.version.find_first(where={"city": city})
+    
+    async def isUpToDate(self, city: str, endpoint_version: str) -> bool:
+        dbo = await self.getVersion(city)
+        if not dbo:
+            return False
+        date_endpoint_version = datetime.strptime(endpoint_version, "%d.%m.%Y %H:%M:%S %f")
+        return dbo.timestamp >= utc.localize(date_endpoint_version)
+    
+    async def updateVersion(self, city: str, endpoint_version: str):
+        dbo = await self.getVersion(city)
+        if not dbo:
+            await self.prisma.version.create({
+                "city": city,
+                "timestamp": datetime.strptime(endpoint_version, "%d.%m.%Y %H:%M:%S %f")
+            })
+        else:
+            await self.prisma.version.update({
+                "where": {"city": city},
+                "data": {"timestamp": datetime.strptime(endpoint_version, "%d.%m.%Y %H:%M:%S %f")}
+            })

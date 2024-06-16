@@ -24,12 +24,15 @@ class Harvester:
 
     dates: list[ElectionDate] = []
     db: Database = Database()
+    server_version: str
 
     def __readData(self):
         print("Reading data for " + self.endpoint.name + "!")
         url = self.endpoint.baseUrl + self.endpoint.id + "/api/termine.json"
         with urlopen(url) as response:
-            dates = uniqueBy(json.loads(response.read().decode("UTF-8"))["termine"], "url")
+            raw_json = json.loads(response.read().decode("UTF-8"))
+            dates = uniqueBy(raw_json["termine"], "url")
+            self.server_version = raw_json["file_timestamp"]
             self.dates = [ElectionDate(date) for date in dates]
         for date in self.dates:
             base = urljoin(self.endpoint.baseUrl, date.url.replace("praesentation/", ""))
@@ -40,6 +43,9 @@ class Harvester:
         print("Found " + str(len(self.dates)) + " possible elections"  + " in " + self.endpoint.name +"!")
 
     async def harvest(self):
+        if await self.db.isUpToDate(self.endpoint.name, self.server_version):
+            print("Data for " + self.endpoint.name + " is up to date! Exiting...")
+            return
         for date in self.dates:
             with urlopen(date.url) as response:
                 data = json.loads(response.read().decode("UTF-8"))
@@ -66,6 +72,7 @@ class Harvester:
                             continue
                         vote = Vote(district.district_id, election.election_id, party.party_id, row[col], vote_type)
                         await self.db.insertVote(vote)
+        await self.db.updateVersion(self.endpoint.name, self.server_version)
 
     def __read_csv(self, csv: dict, date: ElectionDate) -> pd.DataFrame | None:
         url = urljoin(date.url, csv["url"])

@@ -7,6 +7,12 @@ generator client {
   provider = "prisma-client-py"
 }
 
+model Version {
+  id        Int      @id @default(autoincrement())
+  city      String
+  timestamp DateTime
+}
+
 model Election {
   election_id   Int          @id @default(autoincrement())
   election_name String
